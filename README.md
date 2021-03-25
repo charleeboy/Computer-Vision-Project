@@ -12,6 +12,8 @@
 ### Day 1: Custom Datasets 
 * Using Computer Vision (cv2), We capture pictures of MASK, No MASK, and BAD MASK with our web camera.
 * Save the images and label them in the respective folders of mask, no mask, and bad mask by drawing rectangular bounding boxes around the face.
-* Merged the mask, no mask, and bad mask images of our peers to create a large dataset to tran the model.
+* Merged the mask, no mask, and bad mask images of our peers to create a large dataset to train the model.
+
+<img src="luca.jpg" width="310"/> <img src="Charles.jpg" width="310"/> <img src="sai.jpg" width="310"/>
 
 ### Day 2: 

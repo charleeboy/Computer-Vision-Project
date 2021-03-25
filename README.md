@@ -33,8 +33,8 @@ preprocess = transforms.Compose([
 <br>
 
 In the first line, we instanciate one object of the class transforms.<br>
-On line 2, we resize the image to the required size for ResNet.
-On line 3, we transform the image to tensor, since it's the datatype required by PyTorch.
+On line 2, we resize the image to the required size for ResNet.<br>
+On line 3, we transform the image to tensor, since it's the datatype required by PyTorch.<br>
 On line 4, we apply the mean and the standard deviation that is fixed for the pretrained model.
 <br>
 

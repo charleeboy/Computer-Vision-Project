@@ -40,6 +40,53 @@ On line 4, we apply the mean and the standard deviation that is fixed for the pr
 
 After training the model and getting good result, we saved it in ONNX format, in order to be able to implement it in [OpenCV](https://opencv.org/) to make prediction in real time.
 
+---
+### Fast.AI
+
+We decided to try another approach based on [Fast.AI](https://docs.fast.ai/index.html), a more high-level library build on PyTorch. <br>
+
+To start, we had to load all the data in a folder, with each class in his own subfolder. After that, the library requires only one line to load all the data:  <br>
+```python
+data  = ImageDataBunch.from_folder(PATH, ds_tfms=get_transforms(), size=sz, bs=bs, valid_pct=0.2).normalize(imagenet_stats)
+```
+<br>
+We have to define the path were the data is stored, the size required, the batchsize, the transofrmation and the normalization. Since we are using a different version of ResNet here, the transformation is conveniently stored inside `imagenet_stats`. It also automatically divides data in test and validation <br>
+
+One line is enough to create the model, as you can see we decided to try with ResNet34 instead of Resnet18, which has 34 layer instead of 18.
+
+```python
+learn = cnn_learner(data, models.resnet34, metrics=accuracy)
+```
+<br>
+
+Also to find the correct learning rate, only two lines of code are required: <br>
+```python
+learn.lr_find();
+learn.recorder.plot()
+```
+<br>
+
+This will plot the learning rate against the loss, allowing us to choose the best range.
+
+[![LR vs Loss plot](https://i.ibb.co/3v0mVq4/lr-plot.png "LR vs Loss plot")](https://i.ibb.co/3v0mVq4/lr-plot.png "LR vs Loss plot")
+
+<br>
+
+After this, the training stage is done again in just one line: <br>
+
+```python
+learn.fit_one_cycle(4, max_lr=slice(1e-3,1e-1))
+```
+<br>
+
+And the output is pretty nice formatted and with a very good score: <br>
+
+[![FastAI Output](https://i.ibb.co/F7NW2cN/training-fastai.png "FastAI Output")](https://i.ibb.co/F7NW2cN/training-fastai.png "FastAI Output")
+
+<br>
+
+Once the trained is done, we saved this model too to integrate the better one for the live detection.
+
 
 
 

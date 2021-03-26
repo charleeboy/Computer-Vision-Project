@@ -150,9 +150,20 @@ These models run in the browser rather than the server improving performance. Th
 
 
 ##  Front End Implementation & Server Infrastructure💻
-The front end has been implemented using Flask, HTML and Javascript, calling flask webservice doing the mask inference. Web sockets were implemented to allow remote viewing of multiple cameras. The mask inference was implemented as a webservice as it would allow quick and easy scaleability by implementing it using a service like "Amazon Lambda" or "Google Cloud Functions", as well as help ease integration with other systems, e.g. security and building access.
+The front end has been implemented using Flask, HTML and Javascript,in a Docker container, calling separately hosted flask webservices doing the machine learning inferences. Web sockets are implemented to allow remote viewing of multiple cameras. The inferences were implemented as a webservice as it would allow quick and easy scaleability, by implementing them using a service like "Amazon Lambda" or "Google Cloud Functions", as well leaves scope of integration with other systems, and IOT technology that already have internet connectivity built in. e.g. security and building access.
 The front end functionality was also implemented using OPEN CV, allowing the functionality to run on any computer with a webcam.
+<br>
 
+
+#  Business Ideas💻
+   - Create a SAAS company selling access to the face classification api to low code developers who want to use the functionailty, with the designed serverless architecture scaleability issues are accounted for 
+   - Create a startup that allow security companies to bolt this classification functionaity to existing IP camera systems (hardware might be needed), the emotion detection could be use to alert security to any potential issues.
+   - Age detection could be used to help verify age of an individual. Supermarkets and Shops could use this functionality in addition to the mask detector to help enforce regulations.
+   - Automatic registry system for schools, also could be used to enforce mask wearing policies.
+   - Automatic entry systems , granting access only if a mask is worn, or if the person is over a certain age
+   - Big stores like ikea could collect data on face expressions, how long people spent looking a certain times using recognition, together with sales data to   train NN to help to know what new items sales potential in addition to knowing when to restock, discount or withdraw items. 
+
+<br>
 #  The results💻
 ![GIF](https://github.com/lpianta/ai_fall_exercises/blob/main/BW3%20_Face_Recognition/mask.gif)
 

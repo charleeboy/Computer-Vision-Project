@@ -13,6 +13,11 @@
 # Technologies and tools 🧰
 ![](https://img.shields.io/badge/OS-LINUX/WINDOWS-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/CODE-PYTHON-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Library-PyTorch-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Library-Fast.ai-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Library-OpenCV-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
 
+# Infrastructure 🧰
+A jupyter lab was created on Google cloud, which acted as a shared workspace and code hub. This environment was also linked to github. A data pipeline in the form a directory structure was created, allowing multiple people to work on different stages of the pipeline. 
+
+![](Infrastructure.jpg)
+
 # Tasks 📝
 ## Custom Datasets 📸
 * Using Computer Vision (cv2), We capture pictures of MASK, No MASK, and BAD MASK with our web camera.
@@ -109,5 +114,18 @@ And the output is pretty nice formatted and with a very good score: <br>
 
 Once the trained is done, we saved this model too to integrate the better one for the live detection.
 
+# Front End Development 📝
+
+## Face-Api.js 💻
+As we wanted the detection functionaity to be avaiable on other devices, we also decided to use the retrain pretrained Face-Api.js models.
+[Face.Api.js](face-api.js)
+
+These models run in the browser rather than the server improving performance. The webapp will deployed in a docker container, with the mask detection implemented as webservice called from the javascript. These models found the contours of the face as well as estimating the age, gender and emotion of the people in the camera view. The models work for individals and well as groups of people.
+
+![](connections.jpg)
+
+##  Front End Implementation & Server Infrastructure💻
+The front end has been implemented using Flask, HTML and Javascript, calling flask webservice doing the mask inference. Web sockets were implemented to allow remote viewing of multiple cameras. The mask inference was implemented as a webservice as it would allow quick and easy scaleability by implementing it using a service like "Amazon Lambda" or "Google Cloud Functions", as well as help ease integration with other systems, e.g. security and building access.
+The front end functionality was also implemented using OPEN CV, allowing the functionality to run on any computer with a webcam.
 
 

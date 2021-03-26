@@ -10,6 +10,9 @@
 * [Charles_Degraft-Johnson](https://github.com/charleeboy)
 * [Sai Mohan Reddy Dalli](https://github.com/smr-dalli)
 
+# Technologies and tools 🧰
+![](https://img.shields.io/badge/OS-LINUX/WINDOWS-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/CODE-PYTHON-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Library-PyTorch-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Library-Fast.ai-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Library-OpenCV-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
+
 # Tasks 📝
 ## Custom Datasets 📸
 * Using Computer Vision (cv2), We capture pictures of MASK, No MASK, and BAD MASK with our web camera.

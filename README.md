@@ -164,6 +164,7 @@ The front end functionality was also implemented using OPEN CV, allowing the fun
    - Big stores like ikea could collect data on face expressions, how long people spent looking a certain times using recognition, together with sales data to   train NN to help to know what new items sales potential in addition to knowing when to restock, discount or withdraw items. 
 
 <br>
+
 #  The results💻
 ![GIF](https://github.com/lpianta/ai_fall_exercises/blob/main/BW3%20_Face_Recognition/mask.gif)
 

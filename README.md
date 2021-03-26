@@ -153,7 +153,8 @@ The front end has been implemented using Flask, HTML and Javascript, calling fla
 The front end functionality was also implemented using OPEN CV, allowing the functionality to run on any computer with a webcam.
 
 #  The results💻
-[![Watch the video](luca.jpg)](https://drive.google.com/file/d/1WKQkFdYYivYrOxYo3IMZktA9U_m522L8/view)
+![GIF](https://github.com/lpianta/ai_fall_exercises/blob/main/BW3%20_Face_Recognition/mask.gif)
+
 [![Watch the video](video.jpg)](https://drive.google.com/file/d/1q_7XRNv2O1TB1vsGK431D42QR5Dmrlkw/view)
 
 

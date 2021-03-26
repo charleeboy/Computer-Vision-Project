@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team Cruise - Mask Wearing classifier</title>
+
+</head>
+
+<body>
+    <div class="container">
+  <video id="video" width="720px" height="560px" autoplay muted></video>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/face-api.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/index.js') }}"></script>
+
+</html>

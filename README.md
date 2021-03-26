@@ -152,4 +152,8 @@ These models run in the browser rather than the server improving performance. Th
 The front end has been implemented using Flask, HTML and Javascript, calling flask webservice doing the mask inference. Web sockets were implemented to allow remote viewing of multiple cameras. The mask inference was implemented as a webservice as it would allow quick and easy scaleability by implementing it using a service like "Amazon Lambda" or "Google Cloud Functions", as well as help ease integration with other systems, e.g. security and building access.
 The front end functionality was also implemented using OPEN CV, allowing the functionality to run on any computer with a webcam.
 
+#  The results💻
+[![Watch the video](video.jpg)](https://drive.google.com/file/d/1q_7XRNv2O1TB1vsGK431D42QR5Dmrlkw/view)
+
+
 

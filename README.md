@@ -119,10 +119,34 @@ Once the trained is done, we saved this model too to integrate the better one fo
 ## Face-Api.js 💻
 As we wanted the detection functionaity to be avaiable on other devices, we also decided to use the retrain pretrained Face-Api.js models.
 [Face.Api.js](face-api.js)
+<br>
+
+
+```javascript
+const video = document.getElementById('video');
+
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+Promise.all([
+  faceapi.loadFaceLandmarkModel("http://127.0.0.1:5000/static/models/"),
+  faceapi.loadFaceRecognitionModel("http://127.0.0.1:5000/static/models/"),
+  faceapi.loadTinyFaceDetectorModel("http://127.0.0.1:5000/static/models/"),
+  faceapi.loadFaceLandmarkModel("http://127.0.0.1:5000/static/models/"),
+  faceapi.loadFaceLandmarkTinyModel("http://127.0.0.1:5000/static/models/"),
+  faceapi.loadFaceRecognitionModel("http://127.0.0.1:5000/static/models/"),
+  faceapi.loadFaceExpressionModel("http://127.0.0.1:5000/static/models/"),
+])
+  .then(startVideo)
+  .catch(err => console.error(err));
+  ```
+<br>
 
 These models run in the browser rather than the server improving performance. The webapp will deployed in a docker container, with the mask detection implemented as webservice called from the javascript. These models found the contours of the face as well as estimating the age, gender and emotion of the people in the camera view. The models work for individals and well as groups of people.
+<br>
+
 
 ![](connections.jpg)
+<br>
+
 
 ##  Front End Implementation & Server Infrastructure💻
 The front end has been implemented using Flask, HTML and Javascript, calling flask webservice doing the mask inference. Web sockets were implemented to allow remote viewing of multiple cameras. The mask inference was implemented as a webservice as it would allow quick and easy scaleability by implementing it using a service like "Amazon Lambda" or "Google Cloud Functions", as well as help ease integration with other systems, e.g. security and building access.

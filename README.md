@@ -1,5 +1,4 @@
-# Build Week 3 👷
-#### Focus on Deep Learning and Computer Vision modules. 📚
+#### Focus on Deep Learning and Computer Vision 📚
 
 # Project on Face Mask Detection 😷
 
